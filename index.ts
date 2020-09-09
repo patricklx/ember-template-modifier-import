@@ -101,13 +101,7 @@ class TemplateImportProcessor extends BroccoliFilter {
             }
             return;
           }
-          modifier.params.splice(0, 0, {
-            type: 'StringLiteral',
-            value: i.dynamic ? i.importPath + path.original.split('.')[1] : i.importPath,
-            original: i.dynamic ? i.importPath + path.original.split('.')[1] : i.importPath,
-            loc: {} as any
-          });
-          path.original = 'ember-template-modifier-imports/modifier/invoke-modifier';
+          path.original = i.dynamic ? i.importPath + path.original.split('.')[1] : i.importPath;
           i.used = true;
         });
       }
