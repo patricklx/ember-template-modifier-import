@@ -16,7 +16,6 @@
     "test": "tests"
   },
   "scripts": {
-    "prepublishOnly": "npm run ts:build",
     "ts:build": "tsc --p tsconfig.json",
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",

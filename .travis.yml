@@ -40,6 +40,7 @@ jobs:
       script:
         - yarn lint:hbs
         - yarn lint:js
+        - yarn ts:build
         - yarn test
 
     - name: "Floating Dependencies"

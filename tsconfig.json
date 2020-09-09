@@ -1,0 +1,30 @@
+{
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "noEmit": false,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "target": "ES2018",
+    "module": "CommonJS",
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noEmitOnError": false,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": ["es2018"]
+  },
+  "include": [
+    "index.ts"
+  ],
+  "exclude": ["./node_modules"]
+}
