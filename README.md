@@ -1,23 +1,21 @@
-ember-template-helper-import
+ember-template-modifier-import
 ==============================================================================
 
-forked from https://github.com/crashco/ember-template-component-import and changed to allow helper imports
+forked from https://github.com/crashco/ember-template-component-import and changed to allow modifier imports
 This is to be used alongside https://github.com/crashco/ember-template-component-import
 
 This addon allows you to use import-style syntax to create local bindings to
-a helper within a template file.
+a modifier within a template file.
 
-* More concise helpers invocation while making it explicit where it comes from
+* More concise modifier invocation while making it explicit where it comes from
 * No hyphens needed!
 * Relative imports!
-
-* Currently only tested with simple helpers
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-template-helper-import
+ember install ember-template-modifier-import
 ```
 
 
@@ -27,30 +25,26 @@ Usage
 Use the same kind of import syntax you are familiar with from Javascript:
 
 ```hbs
-{{import myHelper from 'ui/helper'}}
+{{import mymodifier from 'ui/modifier'}}
 
-{{myHelper 'a'}}
+{{mymodifier 'a'}}
 
-{{import helper as ashelper from "ui/helpers" }}
-{{import a as ahelper from "ui/helpers" }}
-{{import "* as helpers" from "u/helpersi" }}
-{{import "a, b" from "ui/helpers" }}
-{{import "a as x, b as y" from "ui/helpers" }}
-{{import "a as z, helper" from "ui/helpers" }}
+{{import modifier as asmodifier from "ui/modifiers" }}
+{{import a as amodifier from "ui/modifiers" }}
+{{import "* as modifiers" from "u/modifiersi" }}
+{{import "a, b" from "ui/modifiers" }}
+{{import "a as x, b as y" from "ui/modifiers" }}
+{{import "a as z, modifier" from "ui/modifiers" }}
 ```
 
-The helper is looked up from the given string using a direct lookup
-pattern. I set the `resolveHelper` in the resolver. 
-All this addon does is taking that `{{import ...}}` statement
-and replacing all helper invocations with `{{ember-template-helper-import/helpers/invoke-helper 'myHelper' ...}}`.
-
-Our helper then looks up the actual helper and calls `compute` with the other arguments
+The modifier is looked up from the given string using a direct lookup
+pattern.
 
 Motivation
 ------------------------------------------------------------------------------
 
 [ember-template-component-import](https://github.com/crashco/ember-template-component-import)
-already gives us import for components, but I really miss the helper imports.
+already gives us import for components, but I really miss the modifier imports.
 So I went ahead and added this functionality :)
 
 
