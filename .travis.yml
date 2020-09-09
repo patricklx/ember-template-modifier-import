@@ -45,6 +45,7 @@ jobs:
 
     - name: "Floating Dependencies"
       script:
+        - yarn ts:build
         - yarn test
 
     # we recommend new addons test the current and previous LTS
