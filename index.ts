@@ -112,7 +112,9 @@ class TemplateImportProcessor extends BroccoliFilter {
     imports.forEach((imp) => {
       if (imp.used) {
         const index = ast.body.indexOf(imp.node);
-        ast.body.splice(index, 1);
+        if (index >= 0) {
+          ast.body.splice(index, 1);
+        }
       }
     })
   }
